@@ -1,0 +1,105 @@
+.cgpt-copy-md-btn {
+    color: #007bff !important;
+    /* Blue color for highlighting */
+    border: 1px solid #007bff !important;
+    background: rgba(0, 123, 255, 0.1) !important;
+    transition: all 0.2s ease;
+}
+
+.cgpt-copy-md-btn:hover {
+    background: rgba(0, 123, 255, 0.2) !important;
+}
+
+.cgpt-foldable-btn {
+    color: #28a745 !important;
+    /* Green color for foldable */
+    border: 1px solid #28a745 !important;
+    background: rgba(40, 167, 69, 0.1) !important;
+    transition: all 0.2s ease;
+    margin-left: 4px;
+}
+
+.cgpt-foldable-btn:hover {
+    background: rgba(40, 167, 69, 0.2) !important;
+}
+
+/* Folded state styles */
+.cgpt-folded {
+    position: relative;
+    max-height: 120px;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
+.cgpt-folded .cgpt-folded-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background: linear-gradient(to top,
+            rgba(59, 130, 246, 0.08) 0%,
+            rgba(59, 130, 246, 0.06) 30%,
+            rgba(59, 130, 246, 0.04) 60%,
+            rgba(59, 130, 246, 0.02) 80%,
+            transparent 100%);
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 2;
+    transition: all 0.2s ease;
+    border-radius: 8px 8px 0 0;
+}
+
+.cgpt-folded .cgpt-folded-overlay:hover {
+    background: linear-gradient(to top,
+            rgba(59, 130, 246, 0.08) 0%,
+            rgba(59, 130, 246, 0.06) 30%,
+            rgba(59, 130, 246, 0.04) 60%,
+            rgba(59, 130, 246, 0.02) 80%,
+            transparent 100%);
+}
+
+.cgpt-folded .cgpt-folded-overlay .expand-text {
+    background: rgba(59, 130, 246, 0.9);
+    color: white;
+    padding: 6px 12px;
+    border-radius: 16px;
+    font-size: 12px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.2s ease;
+    margin-bottom: 8px;
+}
+
+.cgpt-folded .cgpt-folded-overlay:hover .expand-text {
+    background: rgba(59, 130, 246, 1);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.cgpt-folded .cgpt-folded-overlay .expand-icon {
+    width: 14px;
+    height: 14px;
+    transition: transform 0.2s ease;
+}
+
+.cgpt-folded .cgpt-folded-overlay:hover .expand-icon {
+    transform: translateY(-1px);
+}
+
+.cgpt-folded>*:not(.cgpt-folded-overlay):not(.cgpt-foldable-btn):not(.cgpt-copy-md-btn) {
+    opacity: 0.85;
+    filter: blur(0.3px);
+    transition: all 0.3s ease;
+}
+
+.cgpt-folded .cgpt-foldable-btn,
+.cgpt-folded .cgpt-copy-md-btn {
+    opacity: 1 !important;
+    filter: none !important;
+}
